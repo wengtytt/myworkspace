@@ -1,0 +1,19 @@
+{
+    "name": "my-workspace",
+    "description": "Sample workspace",
+    "private": true,
+    "workspaces": [
+        "packages/*",
+        "components/*",
+        "builder"
+    ],
+    "scripts": {
+        "a:build": "cd builder && APP_NAME=PackageA yarn run build",
+        "b:build": "cd builder && APP_NAME=PackageB yarn run build"
+    },
+    "devDependencies": {
+        "eslint": "~7.25.0",
+        "eslint-plugin-import": "~2.22.1"
+    },
+    "packageManager": "yarn@3.0.2"
+}
