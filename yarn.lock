@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 5
   cacheKey: 8
 
 "@babel/code-frame@npm:7.12.11":
@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:7.15.8, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.14":
+"@babel/core@npm:^7.12.3, @babel/core@npm:^7.13.14":
   version: 7.15.8
   resolution: "@babel/core@npm:7.15.8"
   dependencies:
@@ -2272,6 +2272,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"basic-auth@npm:^1.0.3":
+  version: 1.1.0
+  resolution: "basic-auth@npm:1.1.0"
+  checksum: a248a4b125e91a188748011ce7583c8d40f55ce222196190e76ae8c3280fbdf6914f509d66123084e549f41f5b36c6fe09e5e8ec72951f5c32b50e9aa7f08b64
+  languageName: node
+  linkType: hard
+
 "batch@npm:0.6.1":
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
@@ -2737,6 +2744,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"colors@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "colors@npm:1.4.0"
+  checksum: 98aa2c2418ad87dedf25d781be69dc5fc5908e279d9d30c34d8b702e586a0474605b3a189511482b9d5ed0d20c867515d22749537f7bc546256c6014f3ebdcec
+  languageName: node
+  linkType: hard
+
 "combined-stream@npm:^1.0.6, combined-stream@npm:~1.0.6":
   version: 1.0.8
   resolution: "combined-stream@npm:1.0.8"
@@ -2767,29 +2781,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"component-a@file:../../components/ComponentA::locator=package-a%40workspace%3Apackages%2FPackageA":
-  version: 1.0.0
-  resolution: "component-a@file:../../components/ComponentA#../../components/ComponentA::hash=837de0&locator=package-a%40workspace%3Apackages%2FPackageA"
-  checksum: 78596b7228e1dfcc9667f5baddafcdbbb1f8572c31a72f4527fa53e88aae7241af7ea2c6e5bf5709a10856daa9432158a85860a4a63fffea8a72cfd30ecc34ec
+"component-a@link:../../components/ComponentA::locator=package-a%40workspace%3Apackages%2FPackageA":
+  version: 0.0.0-use.local
+  resolution: "component-a@link:../../components/ComponentA::locator=package-a%40workspace%3Apackages%2FPackageA"
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "component-a@workspace:components/ComponentA":
   version: 0.0.0-use.local
   resolution: "component-a@workspace:components/ComponentA"
+  dependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 
-"component-b@file:../../components/ComponentB::locator=package-b%40workspace%3Apackages%2FPackageB":
-  version: 1.0.0
-  resolution: "component-b@file:../../components/ComponentB#../../components/ComponentB::hash=a8ba66&locator=package-b%40workspace%3Apackages%2FPackageB"
-  checksum: 15c90cbeb1f5691e50bf40d4e2245f8b9ebc09c739e2d7ab0ebb959a4d86d13e63a944e5981a7fe5224c20d18055eabbc79f33478ae8201aa03a12d7b880ac15
+"component-b@link:../../components/ComponentB::locator=package-b%40workspace%3Apackages%2FPackageB":
+  version: 0.0.0-use.local
+  resolution: "component-b@link:../../components/ComponentB::locator=package-b%40workspace%3Apackages%2FPackageB"
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "component-b@workspace:components/ComponentB":
   version: 0.0.0-use.local
   resolution: "component-b@workspace:components/ComponentB"
+  dependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 
@@ -2919,6 +2937,13 @@ __metadata:
   version: 1.0.3
   resolution: "core-util-is@npm:1.0.3"
   checksum: 9de8597363a8e9b9952491ebe18167e3b36e7707569eed0ebf14f8bba773611376466ae34575bca8cfe3c767890c859c74056084738f09d4e4a6f902b2ad7d99
+  languageName: node
+  linkType: hard
+
+"corser@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "corser@npm:2.0.1"
+  checksum: 9ff6944eda760c8c3118747a636afc3ede53b41e7b9960513a15b88032209a728e630ae4b41e20a941e34da129fe9094d1f5d95123ef64ac2e16cdad8dce9c87
   languageName: node
   linkType: hard
 
@@ -3323,6 +3348,20 @@ __metadata:
     jsbn: ~0.1.0
     safer-buffer: ^2.1.0
   checksum: 22fef4b6203e5f31d425f5b711eb389e4c6c2723402e389af394f8411b76a488fa414d309d866e2b577ce3e8462d344205545c88a8143cc21752a5172818888a
+  languageName: node
+  linkType: hard
+
+"ecstatic@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "ecstatic@npm:3.3.2"
+  dependencies:
+    he: ^1.1.1
+    mime: ^1.6.0
+    minimist: ^1.1.0
+    url-join: ^2.0.5
+  bin:
+    ecstatic: ./lib/ecstatic.js
+  checksum: 61787fe020a3344b3750fa95fa38f8e5810d6b8cb2626f084a7283c11dde641d204ef19a5e29926d6f0189b2d14780bb6910493b49f9f1e2a0aa39297cc6b1b9
   languageName: node
   linkType: hard
 
@@ -4116,16 +4155,17 @@ fsevents@^1.2.7:
     bindings: ^1.5.0
     nan: ^2.12.1
   checksum: ae855aa737aaa2f9167e9f70417cf6e45a5cd11918e1fee9923709a0149be52416d765433b4aeff56c789b1152e718cd1b13ddec6043b78cdda68260d86383c1
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
 "fsevents@patch:fsevents@^1.2.7#~builtin<compat/fsevents>":
   version: 1.2.13
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=1cc4b2"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7"
   dependencies:
     bindings: ^1.5.0
     nan: ^2.12.1
-  checksum: b264407498db2cfdcc2a05287334a4160c985a88e4a989e2f2f8dcc6afc8b04a4fcd82c797266442452e11c1fb07d7747d138b078fe4bb1f8f4fd2a6f2484d7e
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -4468,6 +4508,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"he@npm:^1.1.1":
+  version: 1.2.0
+  resolution: "he@npm:1.2.0"
+  bin:
+    he: bin/he
+  checksum: 3d4d6babccccd79c5c5a3f929a68af33360d6445587d628087f39a965079d84f18ce9c3d3f917ee1e3978916fc833bb8b29377c3b403f919426f91bc6965e7a7
+  languageName: node
+  linkType: hard
+
 "hosted-git-info@npm:^2.1.4":
   version: 2.8.9
   resolution: "hosted-git-info@npm:2.8.9"
@@ -4576,7 +4625,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"http-proxy@npm:^1.17.0":
+"http-proxy@npm:^1.17.0, http-proxy@npm:^1.18.0":
   version: 1.18.1
   resolution: "http-proxy@npm:1.18.1"
   dependencies:
@@ -4584,6 +4633,27 @@ fsevents@^1.2.7:
     follow-redirects: ^1.0.0
     requires-port: ^1.0.0
   checksum: f5bd96bf83e0b1e4226633dbb51f8b056c3e6321917df402deacec31dd7fe433914fc7a2c1831cf7ae21e69c90b3a669b8f434723e9e8b71fd68afe30737b6a5
+  languageName: node
+  linkType: hard
+
+"http-server@npm:^0.12.3":
+  version: 0.12.3
+  resolution: "http-server@npm:0.12.3"
+  dependencies:
+    basic-auth: ^1.0.3
+    colors: ^1.4.0
+    corser: ^2.0.1
+    ecstatic: ^3.3.2
+    http-proxy: ^1.18.0
+    minimist: ^1.2.5
+    opener: ^1.5.1
+    portfinder: ^1.0.25
+    secure-compare: 3.0.1
+    union: ~0.5.0
+  bin:
+    hs: bin/http-server
+    http-server: bin/http-server
+  checksum: fdd8652638937940ce3e2c2a36f2b92cee57967aaba40552f0d422ba01cbb86c2645aabc73ba89035651ae0e5a02df28f81adce93cf3188236ced7d426b0b036
   languageName: node
   linkType: hard
 
@@ -5534,7 +5604,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.0.0, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:~4.17.10":
+"lodash@npm:^4.0.0, lodash@npm:^4.15.0, lodash@npm:^4.17.11, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:~4.17.10":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -5740,7 +5810,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mime@npm:1.6.0":
+"mime@npm:1.6.0, mime@npm:^1.6.0":
   version: 1.6.0
   resolution: "mime@npm:1.6.0"
   bin:
@@ -5781,7 +5851,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.3, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
+"minimist@npm:^1.1.0, minimist@npm:^1.1.3, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
   checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
@@ -5941,7 +6011,6 @@ fsevents@^1.2.7:
   dependencies:
     eslint: ~7.25.0
     eslint-plugin-import: ~2.22.1
-    react: ~17.0.0
   languageName: unknown
   linkType: soft
 
@@ -6317,6 +6386,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"opener@npm:^1.5.1":
+  version: 1.5.2
+  resolution: "opener@npm:1.5.2"
+  bin:
+    opener: bin/opener-bin.js
+  checksum: 33b620c0d53d5b883f2abc6687dd1c5fd394d270dbe33a6356f2d71e0a2ec85b100d5bac94694198ccf5c30d592da863b2292c5539009c715a9c80c697b4f6cc
+  languageName: node
+  linkType: hard
+
 "opn@npm:^5.5.0":
   version: 5.5.0
   resolution: "opn@npm:5.5.0"
@@ -6453,7 +6531,9 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "package-a@workspace:packages/PackageA"
   dependencies:
-    component-a: ../../components/ComponentA
+    component-a: "link:../../components/ComponentA"
+    react: ^17.0.2
+    react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 
@@ -6461,7 +6541,9 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "package-b@workspace:packages/PackageB"
   dependencies:
-    component-b: ../../components/ComponentB
+    component-b: "link:../../components/ComponentB"
+    react: ^17.0.2
+    react-dom: ^17.0.2
   languageName: unknown
   linkType: soft
 
@@ -6696,7 +6778,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"portfinder@npm:^1.0.26":
+"portfinder@npm:^1.0.25, portfinder@npm:^1.0.26":
   version: 1.0.28
   resolution: "portfinder@npm:1.0.28"
   dependencies:
@@ -6904,6 +6986,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"qs@npm:^6.4.0":
+  version: 6.10.1
+  resolution: "qs@npm:6.10.1"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: 00e390dbf98eff4d8ff121b61ab2fe32106852290de99ecd0e40fc76651c4101f43fc6cc8313cb69423563876fc532951b11dda55d2917def05f292258263480
+  languageName: node
+  linkType: hard
+
 "qs@npm:~6.5.2":
   version: 6.5.2
   resolution: "qs@npm:6.5.2"
@@ -6973,7 +7064,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.2, react@npm:~17.0.0":
+"react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -7325,11 +7416,11 @@ fsevents@^1.2.7:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
   version: 1.20.0
-  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff"
+  resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
   dependencies:
     is-core-module: ^2.2.0
     path-parse: ^1.0.6
-  checksum: bed00be983cd20a8af0e7840664f655c4b269786dbd9595c5f156cd9d8a0050e65cdbbbdafc30ee9b6245b230c78a2c8ab6447a52545b582f476c29adb188cc5
+  checksum: a0dd7d16a8e47af23afa9386df2dff10e3e0debb2c7299a42e581d9d9b04d7ad5d2c53f24f1e043f7b3c250cbdc71150063e53d0b6559683d37f790b7c8c3cd5
   languageName: node
   linkType: hard
 
@@ -7511,6 +7602,13 @@ fsevents@^1.2.7:
     js-base64: ^2.1.8
     source-map: ^0.4.2
   checksum: ad78bba4466ff7aa6449931a57a980479223c3cad9eccf2180251c2f6fce5b3d982a51f924709e0a0bb2d328dedbb2fad0ccb2a5fdc175513a27cb4e8cf8cfd2
+  languageName: node
+  linkType: hard
+
+"secure-compare@npm:3.0.1":
+  version: 3.0.1
+  resolution: "secure-compare@npm:3.0.1"
+  checksum: 0a8d8d3e54d5772d2cf1c02325f01fc7366d0bd33f964a08a84fe3ee5f34d46435a6ae729c1d239c750e160ef9b58c764d3efb945a1d07faf47978a8e4161594
   languageName: node
   linkType: hard
 
@@ -8547,6 +8645,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"union@npm:~0.5.0":
+  version: 0.5.0
+  resolution: "union@npm:0.5.0"
+  dependencies:
+    qs: ^6.4.0
+  checksum: 021530d02363fb7470ce45d4cb06ae28a97d5a245666e6d0fca6bab0673bea8c7988e7d2f8046acfbab120908cedcb099ca216b357d4483bcd96518b39101be0
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
   resolution: "unique-filename@npm:1.1.1"
@@ -8564,6 +8671,14 @@ fsevents@^1.2.7:
   checksum: 5b6876a645da08d505dedb970d1571f6cebdf87044cb6b740c8dbb24f0d6e1dc8bdbf46825fd09f994d7cf50760e6f6e063cfa197d51c5902c00a861702eb75a
   languageName: node
   linkType: hard
+
+"unirepo-server@workspace:server":
+  version: 0.0.0-use.local
+  resolution: "unirepo-server@workspace:server"
+  dependencies:
+    http-server: ^0.12.3
+  languageName: unknown
+  linkType: soft
 
 "unpipe@npm:1.0.0, unpipe@npm:~1.0.0":
   version: 1.0.0
@@ -8609,6 +8724,13 @@ fsevents@^1.2.7:
   version: 0.1.0
   resolution: "urix@npm:0.1.0"
   checksum: 4c076ecfbf3411e888547fe844e52378ab5ada2d2f27625139011eada79925e77f7fbf0e4016d45e6a9e9adb6b7e64981bd49b22700c7c401c5fc15f423303b3
+  languageName: node
+  linkType: hard
+
+"url-join@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "url-join@npm:2.0.5"
+  checksum: 5c935cc99e5bfd7150302420db4eff9830d117be5ea3edf4b2d9e30a51484bc422e94fd9f2fba78192a75cebe2663735af716e07ec094b9a5f24c75046644c73
   languageName: node
   linkType: hard
 
