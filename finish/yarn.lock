@@ -2809,6 +2809,7 @@ __metadata:
   dependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
+    translator: "link:../Translator"
   languageName: unknown
   linkType: soft
 
@@ -6553,6 +6554,7 @@ fsevents@^1.2.7:
     component-a: "link:../../components/ComponentA"
     react: ^17.0.2
     react-dom: ^17.0.2
+    translator: "link:../../components/Translator"
   languageName: unknown
   linkType: soft
 
@@ -6563,6 +6565,7 @@ fsevents@^1.2.7:
     component-b: "link:../../components/ComponentB"
     react: ^17.0.2
     react-dom: ^17.0.2
+    translator: "link:../../components/Translator"
   languageName: unknown
   linkType: soft
 
@@ -8545,9 +8548,27 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"translator@link:../../components/Translator::locator=package-a%40workspace%3Apackages%2FPackageA":
+  version: 0.0.0-use.local
+  resolution: "translator@link:../../components/Translator::locator=package-a%40workspace%3Apackages%2FPackageA"
+  languageName: node
+  linkType: soft
+
+"translator@link:../../components/Translator::locator=package-b%40workspace%3Apackages%2FPackageB":
+  version: 0.0.0-use.local
+  resolution: "translator@link:../../components/Translator::locator=package-b%40workspace%3Apackages%2FPackageB"
+  languageName: node
+  linkType: soft
+
 "translator@link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA":
   version: 0.0.0-use.local
   resolution: "translator@link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA"
+  languageName: node
+  linkType: soft
+
+"translator@link:../Translator::locator=component-b%40workspace%3Acomponents%2FComponentB":
+  version: 0.0.0-use.local
+  resolution: "translator@link:../Translator::locator=component-b%40workspace%3Acomponents%2FComponentB"
   languageName: node
   linkType: soft
 
@@ -8556,6 +8577,8 @@ fsevents@^1.2.7:
   resolution: "translator@workspace:components/Translator"
   dependencies:
     i18next: ^21.0.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
     react-i18next: ^11.12.0
   languageName: unknown
   linkType: soft

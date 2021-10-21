@@ -4146,7 +4146,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["component-b", "workspace:components/ComponentB"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"]
+            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"],
+            ["translator", "link:../Translator::locator=component-b%40workspace%3Acomponents%2FComponentB"]
           ],
           "linkType": "SOFT",
         }]
@@ -8373,7 +8374,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["package-a", "workspace:packages/PackageA"],
             ["component-a", "link:../../components/ComponentA::locator=package-a%40workspace%3Apackages%2FPackageA"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"]
+            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"],
+            ["translator", "link:../../components/Translator::locator=package-a%40workspace%3Apackages%2FPackageA"]
           ],
           "linkType": "SOFT",
         }]
@@ -8385,7 +8387,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["package-b", "workspace:packages/PackageB"],
             ["component-b", "link:../../components/ComponentB::locator=package-b%40workspace%3Apackages%2FPackageB"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"]
+            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"],
+            ["translator", "link:../../components/Translator::locator=package-b%40workspace%3Apackages%2FPackageB"]
           ],
           "linkType": "SOFT",
         }]
@@ -9074,7 +9077,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", null],
             ["html-parse-stringify", "npm:3.0.1"],
             ["i18next", "npm:21.3.2"],
-            ["react", null]
+            ["react", "npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/i18next",
@@ -10660,10 +10663,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["translator", [
+        ["link:../../components/Translator::locator=package-a%40workspace%3Apackages%2FPackageA", {
+          "packageLocation": "./components/Translator/",
+          "packageDependencies": [
+            ["translator", "link:../../components/Translator::locator=package-a%40workspace%3Apackages%2FPackageA"]
+          ],
+          "linkType": "SOFT",
+          "discardFromLookup": true
+        }],
+        ["link:../../components/Translator::locator=package-b%40workspace%3Apackages%2FPackageB", {
+          "packageLocation": "./components/Translator/",
+          "packageDependencies": [
+            ["translator", "link:../../components/Translator::locator=package-b%40workspace%3Apackages%2FPackageB"]
+          ],
+          "linkType": "SOFT",
+          "discardFromLookup": true
+        }],
         ["link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA", {
           "packageLocation": "./components/Translator/",
           "packageDependencies": [
             ["translator", "link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA"]
+          ],
+          "linkType": "SOFT",
+          "discardFromLookup": true
+        }],
+        ["link:../Translator::locator=component-b%40workspace%3Acomponents%2FComponentB", {
+          "packageLocation": "./components/Translator/",
+          "packageDependencies": [
+            ["translator", "link:../Translator::locator=component-b%40workspace%3Acomponents%2FComponentB"]
           ],
           "linkType": "SOFT",
           "discardFromLookup": true
@@ -10673,6 +10700,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["translator", "workspace:components/Translator"],
             ["i18next", "npm:21.3.2"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"],
             ["react-i18next", "virtual:13fc5498bf34d26f77ac9d0de0162d40d7de346730366976c637b56a0ed3235e0e3e090f2575fed58590f1ffc6e239e3132526908938a4b158f1248f22c2e215#npm:11.12.0"]
           ],
           "linkType": "SOFT",

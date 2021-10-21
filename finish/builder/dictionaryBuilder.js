@@ -48,7 +48,9 @@ exports.buildDictionaries = () => {
         const configPath = p.join("/");
         const configFile = `${configPath}/${ns}/i18nConfig.js`;
 
-        const contents = `import { importTranslation, getTranslations as getTs } from 'translator';
+        const type = p.pop(); //packages or components
+
+        let contents = `import { importTranslation, importCommonTranslation, getTranslations as getTs } from 'translator';
         
         const configs = ${util.inspect(result, {
             depth: "null",
@@ -64,6 +66,9 @@ exports.buildDictionaries = () => {
 
         export { getTranslations };
         `;
+
+        if (type === "packages")
+            contents += "importCommonTranslation(configs);";
 
         const parsedContents = contents.replace(/('")|("')|(`")|("`)/g, "");
 

@@ -1,9 +1,12 @@
-import { importTranslation, getTranslations as getTs } from 'translator';
+import { importTranslation, importCommonTranslation, getTranslations as getTs } from 'translator';
         
         const configs = {
   namespace: 'PackageB',
-  keys: [ 'showMore', 'viewAll' ],
-  dictionary: { en: { showMore: 'Show more', viewAll: 'View all' } }
+  keys: [ 'title' ],
+  dictionary: {
+    en: { title: 'Sample container of the package B' },
+    zh: { title: '在项目B中的样板容器' }
+  }
 }
         
         importTranslation(configs);
@@ -15,4 +18,4 @@ import { importTranslation, getTranslations as getTs } from 'translator';
         export default configs;
 
         export { getTranslations };
-        
+        importCommonTranslation(configs);

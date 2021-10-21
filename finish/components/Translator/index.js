@@ -2,7 +2,6 @@ import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
 const fallbackLng = "en";
-
 const activeLang = "en";
 
 i18n.use(initReactI18next) // passes i18n down to react-i18next
@@ -11,15 +10,10 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
         // the translations
         // (tip move them in a JSON file and import them,
         // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
-        resources: {
-            en: {
-                common: {
-                    "Welcome to React": "Welcome to React and react-i18next",
-                },
-            },
-        },
+        resources: {},
         defaultNS: "common",
-        lng: activeLang, // if you're using a language detector, do not define the lng option
+        lng: activeLang, // if you're using a language detector, do not define the lng option,
+        languages: ["en", "zh"],
         fallbackLng: fallbackLng,
         interpolation: {
             escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
@@ -33,30 +27,23 @@ i18n.use(initReactI18next) // passes i18n down to react-i18next
 
 export default i18n;
 
-export const init = (resources) => {
-    return i18n.addResourceBundle(activeLang, "common", resources, true, true);
-};
-
 export const importTranslation = (conf) => {
     const { namespace, dictionary } = conf;
 
-    let lang, translation;
-
-    if (dictionary[activeLang]) {
-        lang = activeLang;
-
-        translation = dictionary[activeLang];
-    } else if (dictionary[fallbackLng]) {
-        lang = fallbackLng;
-
-        translation = dictionary[fallbackLng];
-    }
-
-    if (!i18n.hasResourceBundle(lang, namespace)) {
-        i18n.addResourceBundle(lang, namespace, translation);
+    for (let lang in dictionary) {
+        if (!i18n.hasResourceBundle(lang, namespace)) {
+            console.log("adding", namespace, lang);
+            console.log(dictionary);
+            i18n.addResourceBundle(lang, namespace, dictionary[lang]);
+        }
     }
 
     return namespace;
+};
+
+export const importCommonTranslation = (conf) => {
+    console.log({ ...conf, namespace: "common" });
+    return importTranslation({ ...conf, namespace: "common" });
 };
 
 export const getText = (key, ns) => {
@@ -73,7 +60,6 @@ export const getText = (key, ns) => {
 };
 
 export const getTranslations = (config, keys = []) => {
-    // const ns = importTranslation(config);
     const ns = config.namespace;
     const result = {};
 
@@ -87,3 +73,5 @@ export const getTranslations = (config, keys = []) => {
 
     return result;
 };
+
+export { useTranslation };

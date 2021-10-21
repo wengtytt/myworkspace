@@ -1,4 +1,4 @@
 {
-    "showMore": "Show more",
-    "viewAll": "View all"
+    "title": "Sample container of the package A",
+    "test": "Some text for testing"
 }

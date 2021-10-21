@@ -1,19 +1,19 @@
 import React from "react";
+import { getTranslations } from "./i18nConfig";
 
 export default function ComponentA(props) {
-    const title = "Sample Component A";
+    // const title = "Sample Component A";
+    // const { title } = getTranslations();
+    const { title, test } = getTranslations(["test"]);
 
     return (
         <div
-            styles={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+            style={{
                 padding: "1rem",
-                background: "rgb(56, 193, 252)",
             }}
         >
-            <span>{title}</span>
+            <p>{title}</p>
+            <p>{test}</p>
         </div>
     );
 }

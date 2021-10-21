@@ -1,20 +1,18 @@
-import { importTranslation, getTranslations as getTs } from "translator";
+import { importTranslation, importCommonTranslation, getTranslations as getTs } from 'translator';
+        
+        const configs = {
+  namespace: 'ComponentA',
+  keys: [ 'title' ],
+  dictionary: { en: { title: 'Sample Component A' }, zh: { title: '样本模块A' } }
+}
+        
+        importTranslation(configs);
 
-const configs = {
-    namespace: "ComponentA",
-    keys: ["title"],
-    dictionary: {
-        en: { title: "Sample Component A" },
-        zh: { title: "样本模块A" },
-    },
-};
+        const getTranslations = (keys = []) => {
+            return getTs(configs, keys);
+        };
 
-importTranslation(configs);
+        export default configs;
 
-const getTranslations = (keys = []) => {
-    return getTs(configs, keys);
-};
-
-export default configs;
-
-export { getTranslations };
+        export { getTranslations };
+        

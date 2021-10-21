@@ -1,4 +1,4 @@
-import { importTranslation, getTranslations as getTs } from 'translator';
+import { importTranslation, importCommonTranslation, getTranslations as getTs } from 'translator';
         
         const configs = {
   namespace: 'ComponentB',
