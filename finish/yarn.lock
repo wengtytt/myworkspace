@@ -1254,7 +1254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.12.0, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.8.4":
   version: 7.15.4
   resolution: "@babel/runtime@npm:7.15.4"
   dependencies:
@@ -2793,6 +2793,7 @@ __metadata:
   dependencies:
     react: ^17.0.2
     react-dom: ^17.0.2
+    translator: "link:../Translator"
   languageName: unknown
   linkType: soft
 
@@ -4543,6 +4544,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"html-parse-stringify@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "html-parse-stringify@npm:3.0.1"
+  dependencies:
+    void-elements: 3.1.0
+  checksum: 334fdebd4b5c355dba8e95284cead6f62bf865a2359da2759b039db58c805646350016d2017875718bc3c4b9bf81a0d11be5ee0cf4774a3a5a7b97cde21cfd67
+  languageName: node
+  linkType: hard
+
 "http-cache-semantics@npm:^4.1.0":
   version: 4.1.0
   resolution: "http-cache-semantics@npm:4.1.0"
@@ -4691,6 +4701,15 @@ fsevents@^1.2.7:
   dependencies:
     ms: ^2.0.0
   checksum: 9c7a74a2827f9294c009266c82031030eae811ca87b0da3dceb8d6071b9bde22c9f3daef0469c3c533cc67a97d8a167cd9fc0389350e5f415f61a79b171ded16
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^21.0.1":
+  version: 21.3.2
+  resolution: "i18next@npm:21.3.2"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: 26903225af36a4c35c35f68d45eae74e29226e6f84417857598c156b5c69e0df4977491a85481641f851b9dbe93c0f00ff412f0b193a12973c488a3aad4e8e5d
   languageName: node
   linkType: hard
 
@@ -7064,6 +7083,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:^11.12.0":
+  version: 11.12.0
+  resolution: "react-i18next@npm:11.12.0"
+  dependencies:
+    "@babel/runtime": ^7.14.5
+    html-parse-stringify: ^3.0.1
+  peerDependencies:
+    i18next: ">= 19.0.0"
+    react: ">= 16.8.0"
+  checksum: 985e1ede08ab4e1235a03680d339cb558c7c360e5435924587c383dd1c5a183d0656d1f72e59deda757864c78e137d0c664f9daadf9ccdca42ca56cce5db7b23
+  languageName: node
+  linkType: hard
+
 "react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -8513,6 +8545,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"translator@link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA":
+  version: 0.0.0-use.local
+  resolution: "translator@link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA"
+  languageName: node
+  linkType: soft
+
+"translator@workspace:components/Translator":
+  version: 0.0.0-use.local
+  resolution: "translator@workspace:components/Translator"
+  dependencies:
+    i18next: ^21.0.1
+    react-i18next: ^11.12.0
+  languageName: unknown
+  linkType: soft
+
 "traverse@npm:^0.6.6":
   version: 0.6.6
   resolution: "traverse@npm:0.6.6"
@@ -8837,6 +8884,13 @@ fsevents@^1.2.7:
     core-util-is: 1.0.2
     extsprintf: ^1.2.0
   checksum: c431df0bedf2088b227a4e051e0ff4ca54df2c114096b0c01e1cbaadb021c30a04d7dd5b41ab277bcd51246ca135bf931d4c4c796ecae7a4fef6d744ecef36ea
+  languageName: node
+  linkType: hard
+
+"void-elements@npm:3.1.0":
+  version: 3.1.0
+  resolution: "void-elements@npm:3.1.0"
+  checksum: 0390f818107fa8fce55bb0a5c3f661056001c1d5a2a48c28d582d4d847347c2ab5b7f8272314cac58acf62345126b6b09bea623a185935f6b1c3bbce0dfd7f7f
   languageName: node
   linkType: hard
 

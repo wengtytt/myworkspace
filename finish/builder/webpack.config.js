@@ -1,9 +1,9 @@
 const path = require("path");
-// const { buildDictionaries } = require("./helpers/dictionaryBuilder");
+const { buildDictionaries } = require("./dictionaryBuilder");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
 module.exports = (env, argv) => {
-    // buildDictionaries();
+    buildDictionaries();
 
     const configs = process.env;
 

@@ -35,6 +35,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:components/ComponentB"
       },
       {
+        "name": "translator",
+        "reference": "workspace:components/Translator"
+      },
+      {
         "name": "package-a",
         "reference": "workspace:packages/PackageA"
       },
@@ -56,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["my-workspace", ["workspace:."]],
       ["package-a", ["workspace:packages/PackageA"]],
       ["package-b", ["workspace:packages/PackageB"]],
+      ["translator", ["workspace:components/Translator"]],
       ["unirepo-server", ["workspace:server"]]
     ],
     "fallbackPool": [
@@ -4121,7 +4126,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["component-a", "workspace:components/ComponentA"],
             ["react", "npm:17.0.2"],
-            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"]
+            ["react-dom", "virtual:8a1e8052a0a79842a09faf0801c0d053935f8c7d4f2e792eac0bd75b1d2972c14d731b7170ebebea35038688bffa665bf9c7aa392d96285b51f4a5d8bd2a4aeb#npm:17.0.2"],
+            ["translator", "link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA"]
           ],
           "linkType": "SOFT",
         }]
@@ -6152,6 +6158,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["html-parse-stringify", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/html-parse-stringify-npm-3.0.1-5762cd4b01-334fdebd4b.zip/node_modules/html-parse-stringify/",
+          "packageDependencies": [
+            ["html-parse-stringify", "npm:3.0.1"],
+            ["void-elements", "npm:3.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["http-cache-semantics", [
         ["npm:4.1.0", {
           "packageLocation": "./.yarn/cache/http-cache-semantics-npm-4.1.0-860520a31f-974de94a81.zip/node_modules/http-cache-semantics/",
@@ -6310,6 +6326,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["humanize-ms", "npm:1.2.1"],
             ["ms", "npm:2.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["i18next", [
+        ["npm:21.3.2", {
+          "packageLocation": "./.yarn/cache/i18next-npm-21.3.2-d4eaa5aef5-26903225af.zip/node_modules/i18next/",
+          "packageDependencies": [
+            ["i18next", "npm:21.3.2"],
+            ["@babel/runtime", "npm:7.15.4"]
           ],
           "linkType": "HARD",
         }]
@@ -9031,6 +9057,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-i18next", [
+        ["npm:11.12.0", {
+          "packageLocation": "./.yarn/cache/react-i18next-npm-11.12.0-6cfc7f159b-985e1ede08.zip/node_modules/react-i18next/",
+          "packageDependencies": [
+            ["react-i18next", "npm:11.12.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:13fc5498bf34d26f77ac9d0de0162d40d7de346730366976c637b56a0ed3235e0e3e090f2575fed58590f1ffc6e239e3132526908938a4b158f1248f22c2e215#npm:11.12.0", {
+          "packageLocation": "./.yarn/__virtual__/react-i18next-virtual-569aea8f8b/0/cache/react-i18next-npm-11.12.0-6cfc7f159b-985e1ede08.zip/node_modules/react-i18next/",
+          "packageDependencies": [
+            ["react-i18next", "virtual:13fc5498bf34d26f77ac9d0de0162d40d7de346730366976c637b56a0ed3235e0e3e090f2575fed58590f1ffc6e239e3132526908938a4b158f1248f22c2e215#npm:11.12.0"],
+            ["@babel/runtime", "npm:7.15.4"],
+            ["@types/i18next", null],
+            ["@types/react", null],
+            ["html-parse-stringify", "npm:3.0.1"],
+            ["i18next", "npm:21.3.2"],
+            ["react", null]
+          ],
+          "packagePeers": [
+            "@types/i18next",
+            "@types/react",
+            "i18next",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["read-pkg", [
         ["npm:1.1.0", {
           "packageLocation": "./.yarn/cache/read-pkg-npm-1.1.0-11237fa82f-a0f5d5e322.zip/node_modules/read-pkg/",
@@ -10605,6 +10659,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["translator", [
+        ["link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA", {
+          "packageLocation": "./components/Translator/",
+          "packageDependencies": [
+            ["translator", "link:../Translator::locator=component-a%40workspace%3Acomponents%2FComponentA"]
+          ],
+          "linkType": "SOFT",
+          "discardFromLookup": true
+        }],
+        ["workspace:components/Translator", {
+          "packageLocation": "./components/Translator/",
+          "packageDependencies": [
+            ["translator", "workspace:components/Translator"],
+            ["i18next", "npm:21.3.2"],
+            ["react-i18next", "virtual:13fc5498bf34d26f77ac9d0de0162d40d7de346730366976c637b56a0ed3235e0e3e090f2575fed58590f1ffc6e239e3132526908938a4b158f1248f22c2e215#npm:11.12.0"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["traverse", [
         ["npm:0.6.6", {
           "packageLocation": "./.yarn/cache/traverse-npm-0.6.6-584cfa4b5f-e2afa72f11.zip/node_modules/traverse/",
@@ -10983,6 +11056,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["assert-plus", "npm:1.0.0"],
             ["core-util-is", "npm:1.0.2"],
             ["extsprintf", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["void-elements", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/void-elements-npm-3.1.0-4f43780839-0390f81810.zip/node_modules/void-elements/",
+          "packageDependencies": [
+            ["void-elements", "npm:3.1.0"]
           ],
           "linkType": "HARD",
         }]

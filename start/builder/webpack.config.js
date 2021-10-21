@@ -1,10 +1,7 @@
 const path = require("path");
-// const { buildDictionaries } = require("./helpers/dictionaryBuilder");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
 module.exports = (env, argv) => {
-    // buildDictionaries();
-
     const configs = process.env;
 
     const { APP_NAME } = configs;

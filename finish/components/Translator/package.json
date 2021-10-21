@@ -1,0 +1,11 @@
+{
+    "name": "translator",
+    "version": "0.1.0",
+    "private": true,
+    "description": "",
+    "license": "MIT",
+    "dependencies": {
+        "i18next": "^21.0.1",
+        "react-i18next": "^11.12.0"
+    }
+}
